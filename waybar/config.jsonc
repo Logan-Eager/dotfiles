@@ -1,0 +1,169 @@
+{
+	"reload_style_on_change": true,
+	"position": "top",
+	"margin-top": 1,
+	"height": 25,
+	"width": 1100,
+	"margin-bottom": 0,
+	"group/left1": {
+		"orientation": "inherit",
+		"modules": [
+			"group/power-menu"
+    ]
+	},
+	"group/left2": {
+		"orientation": "inherit",
+		"modules": [
+			"hyprland/workspaces"
+    ]
+	},
+
+	"modules-left": [
+		"group/left1",
+		"group/left2"
+	],
+	"modules-center": [
+		"mpris",
+		"clock"
+	],
+	"modules-right": [
+		"bluetooth",
+		"pulseaudio",
+		"network",
+		"memory",
+		"cpu"
+	],
+	"hyprland/workspaces": {
+		"on-click": "activate",
+		"format": "{icon}",
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3"
+
+		},
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": []
+		}
+	},
+	"group/power-menu": {
+		"drawer": {
+			"transition-duration": 400,
+			"children-class": "not-hovered",
+			"transition-right-to-left": true
+		},
+		"modules":[
+			"custom/iusearchbtw",
+			"custom/power",
+			"custom/logout",
+			"custom/restart"
+		]
+	},
+	"custom/iusearchbtw": {
+		"format": "",
+		"tooltip": true,
+		"tooltip-format": "I use Arch btw"
+	},
+	"custom/power": {
+		"format": "⏻",
+		"on-click": "systemctl poweroff",
+		"tooltip": true,
+		"tooltip-format": "Shutdown"
+	},
+	"custom/logout": {
+		"format": "󰍃",
+		"on-click": "loginctl terminate-user $USER",
+		"tooltip": true,
+		"tooltip-format": "Log Out"
+	},
+	"custom/restart": {
+		"format": "󰜉",
+		"on-click": "systemctl reboot",
+		"tooltip": true,
+		"tooltip-format": "Reboot System"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "{usage}% 󰍛",
+		"on-click": "kitty -e btop"
+	},
+	"clock": {
+		"format": "{:%I:%M %p}",
+		"format-alt": "{:%d/%m/%Y  %H:%M:%S}",
+		"tooltip-format": "<span>{calendar}</span>",
+		"calendar": {
+			"mode": "month",
+			"weeks-pos": "right",
+			"mode-mon-col": 3,
+			"on-click-right": "mode",
+			"format": {
+				"month": "<span color='#ffead3'><b>{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b>{}</b></span>"
+			}
+		}
+	},
+	"network": {
+		"format-icons": [
+			"󰤯",
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+    ],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "nospacing": 1,
+    "on-click": "nm-connection-editor"
+	},
+	"bluetooth": {
+		"format": "",
+		"format-disabled": "󰂲",
+		"format-off": "󰂲",
+		"format-connected": "",
+		"tooltip-format": "Devices connected: {num_connections}",
+		"on-click": "blueman-manager"
+	},
+	"memory": {
+		"interval": 2,
+		"format": "{percentage}% ",
+		"on-click": "kitty -e btop"
+	},
+	"pulseaudio": {
+		"format": "{icon}",
+		"on-click": "pavucontrol",
+		"on-click-right": "pamixer -t",
+		"tooltip-format": "Playing at {volume}%",
+		"scroll-step": 5,
+		"format-muted": "",
+		"format-icons": {
+			"default": [
+				"",
+				"",
+				""
+      ]
+		}
+	},
+	"mpris": {
+		"format": "{player_icon}",
+		"format-paused": "<span color='grey'>{status_icon}</span>",
+		"max-length": 10,
+		"interval": 1,
+		"player-icons": {
+			"default": "⏸",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"paused": "▶"
+		}
+	}
+}
+
