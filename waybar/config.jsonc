@@ -1,3 +1,6 @@
+/* Waybar Config File*/
+/* Edited by: @Logan-Eager */
+
 {
 	"reload_style_on_change": true,
 	"position": "top",
@@ -51,7 +54,7 @@
 	"group/power-menu": {
 		"drawer": {
 			"transition-duration": 400,
-			"children-class": "not-hovered",
+			"children-class": "not-selected",
 			"transition-right-to-left": true
 		},
 		"modules":[
@@ -85,7 +88,7 @@
 		"tooltip-format": "Reboot System"
 	},
 	"cpu": {
-		"interval": 5,
+		"interval": 1,
 		"format": "{usage}% 󰍛",
 		"on-click": "kitty -e btop"
 	},
@@ -133,7 +136,7 @@
 		"on-click": "blueman-manager"
 	},
 	"memory": {
-		"interval": 2,
+		"interval": 1,
 		"format": "{percentage}% ",
 		"on-click": "kitty -e btop"
 	},

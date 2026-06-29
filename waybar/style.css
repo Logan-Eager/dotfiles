@@ -1,3 +1,6 @@
+/* Waybar Style File*/
+/* Edited by: @Logan-Eager */
+
 /* --- Global-Settings ---*/
 
 /* Colour Palette */
@@ -36,7 +39,7 @@ tooltip {
 }
 
 #left2{
-	padding: 2 2px;
+	padding: 2px 2px;
 }
 
 #mpris{
@@ -104,6 +107,7 @@ tooltip {
 	border-radius: 16px;
 	opacity: 0.9;
 	background: linear-gradient(180deg, @background 75%, @monarch-red);
+    transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.empty.active {
@@ -113,7 +117,7 @@ tooltip {
 
 #group\/power-menu {
 	background-color: @foreground;
-	padding: 2 2px;
+	padding: 2px 2px;
 }
 
 /* --- General Modules --- */
@@ -160,10 +164,12 @@ tooltip {
 	padding: 0px 2px;
 	margin-left: 4px;
 	color: @monarch-red;
+    transition: all 0.3s ease-in-out;
 }
 
 .hidden {
 	opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
 
 tooltip {
