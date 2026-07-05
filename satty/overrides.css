@@ -1,0 +1,10 @@
+/* 
+ * Satty overrides file
+ * Edited by: @Logan-Eager
+*/
+
+.outer_box, .toolbar {
+    background-color: black;
+    color: white;
+}
+

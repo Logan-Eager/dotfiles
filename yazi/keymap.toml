@@ -1,0 +1,13 @@
+# Yazi configuration file
+# Editor: @Logan-Eager
+
+[[manager.prepend_keymap]]
+on   = [ "C" ]
+run  = "plugin ouch"
+desc = "Compress selection with ouch"
+
+[[manager.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod selected files"
+

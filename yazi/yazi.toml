@@ -1,0 +1,20 @@
+# Yazi configuration file
+# Editor: @Logan-Eager
+
+[manager]
+show_symlink = true
+show_hidden = true
+
+# Read me previews
+[[plugin.prepend_previewers]]
+url = "*.md"
+run = "glow"
+
+# Media info previews
+[[plugin.prepend_previewers]]
+mime = "video/*"
+run = "mediainfo"
+[[plugin.prepend_previewers]]
+mime = "audio/*"
+run = "mediainfo"
+
