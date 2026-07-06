@@ -1,4 +1,3 @@
-require("bowthebro/remap")
-require("bowthebro/set")
-require("bowthebro/lazy_init")
-
+require("logan/remap")
+require("logan/set")
+require("logan/lazy_init")

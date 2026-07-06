@@ -1,4 +1,5 @@
 background-color=#0F0F11
 text-color=#F0F0F2
 border-color=#F43131
-font=JetbrainsMonoNL Nerd Font:
+font=JetbrainsMonoNL Nerd Font
+default-timeout=5000

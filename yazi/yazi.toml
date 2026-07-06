@@ -3,7 +3,10 @@
 
 [manager]
 show_symlink = true
-show_hidden = true
+
+# Not feelin it rn 🤷
+# [mgr]
+# show_hidden = true
 
 # Read me previews
 [[plugin.prepend_previewers]]
@@ -18,3 +21,8 @@ run = "mediainfo"
 mime = "audio/*"
 run = "mediainfo"
 
+# Editor hack
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true, for = "unix" }
+]
