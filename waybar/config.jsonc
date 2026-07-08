@@ -102,7 +102,7 @@
 		"tooltip-format": "Reboot System"
     },	
     "custom/updates": {
-        "on-click": "kitty --hold sh -c 'yay -Syu; pkill -SIGRTMIN+8 waybar'",
+        "on-click": "kitty --hold sh -c 'sudo pacman -Syu && yay -Syu; pkill -SIGRTMIN+8 waybar'",
         "tooltip": true,
         "exec": "/home/logan/.config/waybar/updateChecker.sh",
         "return-type": "json",
