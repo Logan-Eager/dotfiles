@@ -28,16 +28,18 @@
 
 	"modules-center": [
 		"mpris",
-		"clock"
+		"clock",
+        "custom/updates"
 	],
 
 	"modules-right": [
+        "group/bg-apps-drawer",
 		"bluetooth",
 		"pulseaudio",
 		"network",
 		"memory",
 		"cpu"
-	],
+    ],
     
 	"hyprland/workspaces": {
 		"on-click": "activate",
@@ -59,15 +61,23 @@
 		},
 		"modules":[
 			"custom/iusearchbtw",
-
 			"custom/power",
 			"custom/logout",
 			"custom/restart"
 		]
 	},
+    "group/bg-apps-drawer":{
+        "drawer": {
+            "transition-duration": 400
+        },
+        "modules": [
+            "custom/drawer-arrow",
+            "tray"
+        ]
+    },
 
 
-    // BUTTONS
+    // WIDGETS
 	"custom/iusearchbtw": {
 		"format": "",
 		"tooltip": true,
@@ -90,7 +100,19 @@
 		"on-click": "uwsm-app -- hyprshutdown --post-cmd 'reboot'",
 		"tooltip": true,
 		"tooltip-format": "Reboot System"
-	},
+    },	
+    "custom/updates": {
+        "on-click": "kitty --hold sh -c 'yay -Syu; pkill -SIGRTMIN+8 waybar'",
+        "tooltip": true,
+        "exec": "/home/logan/.config/waybar/updateChecker.sh",
+        "return-type": "json",
+        "interval": 1800 // Equal to thirty-minutes
+    },
+    "custom/drawer-arrow": {
+        "format": "󰘌",
+        "tooltip": true,
+        "tooltip-format": ""
+    },
 	"cpu": {
 		"interval": 1,
 		"format": "{usage}% 󰍛",

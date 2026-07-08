@@ -9,7 +9,7 @@
 
 /* FONT STUFF */
 * {
-	font-family: 'JetBrainsMono Nerd Font';
+	font-family: 'JetBrainsMonoNL Nerd Font';
     font-weight: bold;
 	font-size: 12px;
 }
@@ -24,7 +24,6 @@ window#waybar {
 #left1{
 	border: 2px solid alpha(@monarch-red, 0.9);
 	background-color: alpha(@background, 0.9);
-	color: @foreground;
 	padding: 2px 2px;
     border-radius: 16px;
 }
@@ -102,23 +101,6 @@ window#waybar {
 	color: @background;
 }
 
-#group\/power-menu {
-	background-color: @foreground;
-	padding: 2px 2px;
-}
-
-#custom-expand-icon {
-	padding: 0px 2px;
-	margin-left: 4px;
-	color: @monarch-red;
-    transition: all 0.3s ease-in-out;
-}
-
-.hidden {
-	opacity: 0;
-    transition: all 0.3s ease-in-out;
-}
-
 tooltip {
 	padding: 4px;
 	background-color: alpha(@background, 1);
@@ -136,10 +118,10 @@ tooltip label {
 }
 
 #mpris {
-	color: @monarch-red;
+	color: red;
 	animation: repeat;
 	animation-name: blink;
-	animation-duration: 3s;
+	animation-duration: 1s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -151,12 +133,30 @@ tooltip label {
     }
 }
 
+#power-menu .drawer-child {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#power-menu:hover .drawer-child {
+    opacity: 1;
+}
+
+#bg-apps-drawer .drawer-child {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#bg-apps-drawer:hover .drawer-child {
+    opacity: 1;
+}
 /* --- BUTTONS --- */
 
 #custom-iusearchbtw,
 #custom-power,
 #custom-logout,
 #custom-restart,
+#custom-updates,
 #mpris,
 #cpu,
 #clock,
@@ -170,12 +170,17 @@ tooltip label {
 	margin: 0 4px 0 2px;
 	padding: 0 4px;
 }
+/* little bit hacky */
+#custom-drawer-arrow{
+    padding: 0 3px;
+}
 
 /* --- BUTTON HOVERS --- */
 #custom-iusearchbtw:hover,
 #custom-power:hover,
 #custom-logout:hover,
 #custom-restart:hover,
+#custom-updates:hover,
 #clock:hover,
 #custom-expand-icon:hover,
 #cpu:hover,
