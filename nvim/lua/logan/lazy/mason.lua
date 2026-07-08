@@ -98,14 +98,20 @@ return {
         ["<C-y>"] = cmp.mapping.confirm({ select = true }),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif require("luasnip").expand_or_jumpable() then
-            require("luasnip").expand_or_jump()
-          else
-            fallback()
-          end
+            -- Check copilot first
+            local copilot = require("logan.lazy.copilot")
+            if copilot.accept_suggestion() then
+                return
+            -- Otherwise fallback to lsp
+            elseif cmp.visible() then
+                cmp.select_next_item()
+            elseif require("luasnip").expand_or_jumpable() then
+                require("luasnip").expand_or_jump()
+            else
+                fallback()
+            end
         end, { "i", "s" }),
+
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()

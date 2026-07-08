@@ -1,13 +1,15 @@
-return {
+local M = {
     "github/copilot.vim",
-
-    -- Use Tab to accept Copilot suggestions or fallback to other completions
-    vim.keymap.set("i", "<Tab>", function()
-        local suggestion = vim.fn["copilot#GetSuggestion"]()
-        if suggestion and suggestion ~= "" then
-            return vim.fn["copilot#Accept"]("")
-        end
-
-        return "<Tab>"
-    end, { expr = true, silent = true, desc = "Copilot accept or fallback" })
+    lazy = false,
 }
+
+function M.accept_suggestion()
+    local suggestion = vim.fn.exists("copilot#GetSuggestion()")
+    if suggestion == 1 then
+        local accept_keys = vim.fn["copilot#Accept"]("")
+        vim.api.nvim_feedkeys(accept_keys, "i", true)
+        return true
+    end
+end
+
+return M
